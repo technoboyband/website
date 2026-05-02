@@ -1,6 +1,6 @@
-import './App.css'
+import '../styles/App.css'
 import { Link } from 'react-router'
-import underConstructionGif from './assets/under-construction.gif'
+import underConstructionGif from '../assets/under-construction.gif'
 
 function App() {
   return (
