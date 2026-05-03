@@ -1,17 +1,14 @@
 
 import { Link } from 'react-router'
-//import getPosts from '../utils/blog';
+import Blog from './Blog'
 
 export default function Thoughts() {
-  //const blogPosts = await getPosts();
 
   return (
     <>
     <h1>thoughts</h1>
       <section id="center">
-        <div>
-          <p>blog bodies</p>
-        </div>
+          <Blog />
       </section>
       <aside className='sidebar'>
         <h4>sidebar</h4>
