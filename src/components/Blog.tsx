@@ -19,9 +19,12 @@ export default function Blog() {
   return (
     <ul>
       {blogPosts.map(p => (
+        <div className='blog-post'>
         <li key={p.guid ?? p.link}>
-          <a href={p.link}>{p.title}</a> 
+          <h2>{p.title}</h2>
+          <p>{p.contentSnippet}</p>
         </li>
+        </div>
       ))}
     </ul>
   );

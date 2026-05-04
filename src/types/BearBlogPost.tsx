@@ -1,7 +1,8 @@
 export type BearBlogPost = {
     title?: string;
     link?: string;
-    description?: string; 
+    content?: string; 
+    contentSnippet?:string;
     pubDate?: string;
     guid?: string;
 };

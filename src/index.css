@@ -100,3 +100,15 @@ p {
   left:50px;
   top:100px;
 }
+
+.blog-post{
+  background-color:#9ca3af;
+  border-bottom: 1px solid black;
+}
+
+.blog-post h2{
+  text-align: left;
+  
+}
+
+
