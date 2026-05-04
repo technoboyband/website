@@ -13,10 +13,10 @@ export default function Blog({ blogPosts, error }: BlogProps) {
     <ul>
       {blogPosts.map(p => (
         <div className='blog-post'>
-        <li key={p.guid ?? p.link}>
+        <div key={p.guid ?? p.link}>
           <h2>{p.title}</h2>
           <p>{p.contentSnippet}</p>
-        </li>
+        </div>
         </div>
       ))}
     </ul>

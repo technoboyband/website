@@ -3,6 +3,7 @@ import { Link } from 'react-router'
 import Blog from './Blog'
 import { useEffect, useState } from 'react';
 import type { BearBlogPost } from '../types/BearBlogPost';
+import Sidebar from './Sidebar';
 
 export default function Thoughts() {
   //todo: pass blog post info to sidebar
@@ -24,15 +25,7 @@ export default function Thoughts() {
       <section id="center">
         <Blog blogPosts={blogPosts} error={error} />
       </section>
-      <aside className='sidebar'>
-        <h4>sidebar</h4>
-        <ol>
-          <li><a href="https://techno.bearblog.dev/vhsdevlog1/">
-            blog 1</a></li>
-          <li><a href="https://techno.bearblog.dev/vhs-shelf-dev-log-2/">
-            blog 2</a></li>
-        </ol>
-      </aside>
+      <Sidebar />
       <Link to="/">home</Link>
     </>
   )
