@@ -1,19 +1,12 @@
-import {useEffect, useState} from 'react';
 import type { BearBlogPost } from '../types/BearBlogPost';
 
-export default function Blog() {
-    const [blogPosts, setBlogPosts] = useState<BearBlogPost[]>([]);
-    const [error, setError] = useState<string | null>(null);
+//todo: move to types
+type BlogProps = {
+    blogPosts: BearBlogPost[];
+    error: string | null;
+}
 
-    useEffect(() => {
-  fetch('/api/blogPosts')
-    .then(async r => {
-      const text = await r.text();
-      return JSON.parse(text);
-    })
-    .then(setBlogPosts)
-    .catch(e => setError(String(e)));
-}, []);
+export default function Blog({ blogPosts, error }: BlogProps) {
 
   if (error) return <p>Failed to load: {error}</p>;
   return (
