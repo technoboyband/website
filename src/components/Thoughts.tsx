@@ -4,6 +4,7 @@ import Blog from './Blog'
 import { useEffect, useState } from 'react';
 import type { BearBlogPost } from '../types/BearBlogPost';
 import Sidebar from './Sidebar';
+import '../styles/Thoughts.css'
 
 export default function Thoughts() {
   //todo: pass blog post info to sidebar
@@ -11,7 +12,7 @@ export default function Thoughts() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch('/api/blogPosts')
+    fetch('/server/blogPosts')
       .then(async r => {
         const text = await r.text();
         return JSON.parse(text);
@@ -20,14 +21,14 @@ export default function Thoughts() {
       .catch(e => setError(String(e)));
   }, []);
   return (
-    <>
+    <div className="thoughts-page">
       <h1>thoughts</h1>
-      <section id="center">
+      <div className="thoughts-layout">
+        <Sidebar />
         <Blog blogPosts={blogPosts} error={error} />
-      </section>
-      <Sidebar />
+      </div>
       <Link to="/">home</Link>
-    </>
+    </div>
   )
 }
 

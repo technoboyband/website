@@ -51,10 +51,6 @@
 }
 
 #root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
   border-inline: 1px solid var(--border);
   min-height: 100svh;
   display: flex;
@@ -62,9 +58,6 @@
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-}
 
 h1,
 h2 {
@@ -90,29 +83,5 @@ h2 {
   @media (max-width: 1024px) {
     font-size: 20px;
   }
-}
-p {
-  margin: 0;
-}
-
-.sidebar{
-  position:fixed;
-  left:50px;
-  top:100px;
-}
-
-.blog-post{
-  background-color:#9ca3af;
-  border-bottom: 1px solid black;
-}
-
-.blog-post h2{
-  text-align: left;
-  
-}
-
-ul{
-  list-style-type: none;
-  padding:0;
 }
 
