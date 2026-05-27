@@ -1,16 +1,23 @@
-import  '../styles/Thoughts.css';
+import type { sideBarProps } from '../types/sideBarProps';
+import '../styles/Thoughts.css';
 
-export default function Sidebar() {
-    //todo: make sidebar scrollable container, search bar?
+export default function Sidebar(props: sideBarProps) {
+    if (props.error) return <p>Failed to load: {props.error}</p>;
     return (
         <div className='sidebar'>
-            <h4>sidebar</h4>
-            <ol>
-                <li><a href="https://techno.bearblog.dev/vhsdevlog1/">
-                    blog 1</a></li>
-                <li><a href="https://techno.bearblog.dev/vhs-shelf-dev-log-2/">
-                    blog 2</a></li>
-            </ol>
+            <ul>
+                {props.blogPosts.map(p => (
+                    <div>
+                        <div key={p.guid ?? p.link}>
+                            <a href={p.link} target="_blank" rel="noopener noreferrer">
+                                <h2>{p.title}</h2>
+                            </a>
+                            <p>{p.pubDate}</p>
+                        </div>
+                    </div>
+                ))}
+            </ul>
         </div>
+
     );
 }

@@ -24,8 +24,9 @@ export default function Thoughts() {
     <div className="thoughts-page">
       <h1>thoughts</h1>
       <div className="thoughts-layout">
-        <Sidebar />
+        <Sidebar blogPosts={blogPosts} error={error} />
         <Blog blogPosts={blogPosts} error={error} />
+        <div className="other-section"> weeklies</div>
       </div>
       <Link to="/">home</Link>
     </div>

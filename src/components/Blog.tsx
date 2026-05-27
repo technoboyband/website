@@ -1,11 +1,5 @@
-import type { BearBlogPost } from '../types/BearBlogPost';
 import '../styles/Thoughts.css';
-
-//todo: move to types
-type BlogProps = {
-  blogPosts: BearBlogPost[];
-  error: string | null;
-}
+import type { BlogProps } from '../types/BlogProps';
 
 export default function Blog({ blogPosts, error }: BlogProps) {
 
