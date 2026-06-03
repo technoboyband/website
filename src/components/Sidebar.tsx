@@ -5,6 +5,7 @@ export default function Sidebar(props: sideBarProps) {
     if (props.error) return <p>Failed to load: {props.error}</p>;
     return (
         <div className='sidebar'>
+            <h3>Recent Thoughts</h3>
             <ul>
                 {props.blogPosts.map(p => (
                     <div>

@@ -7,7 +7,6 @@ import Sidebar from './Sidebar';
 import '../styles/Thoughts.css'
 
 export default function Thoughts() {
-  //todo: pass blog post info to sidebar
   const [blogPosts, setBlogPosts] = useState<BearBlogPost[]>([]);
   const [error, setError] = useState<string | null>(null);
 
