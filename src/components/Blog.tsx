@@ -3,6 +3,7 @@ import type { BlogProps } from '../types/BlogProps';
 
 export default function Blog({ blogPosts, error }: BlogProps) {
   if (error) return <p>Failed to load: {error}</p>;
+  blogPosts = blogPosts.slice(0,5);
   return (
     <div className='main'>
       <h3>Thought Feed</h3>

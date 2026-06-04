@@ -1,19 +1,5 @@
-import '../styles/App.css'
-import { Link } from 'react-router'
-import underConstructionGif from '../assets/under-construction.gif'
+import CRTIntro from './CRT/CRTIntro'
 
-function App() {
-  return (
-    <>
-      <section id="center">
-        <div>
-          <h1>gabs was here</h1>
-          <img src={underConstructionGif}/>
-        </div>
-        <Link to="/thoughts">thoughts</Link>
-      </section>
-    </>
-  )
+export default function App() {
+  return <CRTIntro />
 }
-
-export default App
