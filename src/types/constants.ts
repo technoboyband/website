@@ -1,10 +1,8 @@
-const SCALE = 1
-
 export const SCR = {
-  left:   Math.round(220 * SCALE),
-  top:    Math.round(120  * SCALE),
-  width:  Math.round((372 - 128) * SCALE),
-  height: Math.round((330 - 93)  * SCALE),
+  left:   225,
+  top:    110,
+  width:  229,
+  height: 240,
 }
 
 export const MENU = [

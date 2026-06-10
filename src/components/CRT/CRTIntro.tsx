@@ -7,6 +7,14 @@ import '../../styles/CRT.css'
 
 const TV_SIZE = 500
 
+const screenStyle: React.CSSProperties = {
+  position: 'absolute',
+  left: SCR.left,
+  top: SCR.top,
+  width: SCR.width,
+  height: SCR.height,
+}
+
 export default function CRTIntro() {
   const containerRef = useRef<HTMLDivElement>(null)
   const p5Ref = useRef<p5 | null>(null)
@@ -14,7 +22,8 @@ export default function CRTIntro() {
   const [phase, setPhase] = useState<'static' | 'menu'>('static')
 
   useEffect(() => {
-    if (phase !== 'static' || !containerRef.current || p5Ref.current) return
+    if (phase !== 'static' || !containerRef.current) return
+    if (containerRef.current.querySelector('canvas')) return //prevent duplicate static screen
 
     const sketch = (p: p5) => {
       p.setup = () => {
@@ -44,24 +53,24 @@ export default function CRTIntro() {
   }, [phase])
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexGrow: 1 }}>
+    <div className="tvContainer">
       <div style={{ position: 'relative', width: TV_SIZE, height: TV_SIZE }}>
         <img
           src={tvImg}
           width={TV_SIZE}
           height={TV_SIZE}
-          style={{ position: 'absolute', top: 0, left: 0, pointerEvents: 'none' }}
+          className="tvImage"
         />
         {phase === 'static' && (
           <div
             ref={containerRef}
             className="staticScreen"
+            style={screenStyle}
           />
         )}
         {phase === 'menu' && (
-          <CRTMenu />
+          <CRTMenu style={screenStyle} />
         )}
-
       </div>
     </div>
   )
